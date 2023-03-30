@@ -1,3 +1,3 @@
-import HelloWorld from '../src/components/UIBtn.vue'
+import UIBtn from '../src/components/UIBtn.vue'
 
-export { HelloWorld }
+export { UIBtn }

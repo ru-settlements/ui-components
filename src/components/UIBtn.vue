@@ -23,7 +23,7 @@ defineEmits([
 ])
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .ui-btn {
   border: none;
   border-radius: 5px;

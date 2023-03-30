@@ -1,0 +1,27 @@
+{
+  "name": "ui-components-settlements",
+  "version": "1.0.0",
+  "description": "Ui components for settlements",
+  "main": "dist/library.js",
+  "module": "dist/library.mjs",
+  "type": "module",
+  "files": [
+    "dist/*"
+  ],
+  "repository": "git@github.com:ru-settlements/ui-components.git",
+  "author": "martiiian <jkramorevx@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.47",
+    "rollup": "^3.20.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0"
+  }
+}

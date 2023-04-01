@@ -1,10 +1,12 @@
 <template>
   <h1>Here is component playground</h1>
   <UIButton label="Button" background-color="red" />
+  <Calendar />
 </template>
 
 <script setup lang="ts">
 import UIButton from "./components/UIButton/UIButton.vue";
+import Calendar from "./components/UICalendar/UICalendar.vue";
 </script>
 
 

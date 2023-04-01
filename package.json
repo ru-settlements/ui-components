@@ -1,6 +1,6 @@
 {
   "name": "ui-components-settlements",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ui components for settlements",
   "main": "dist/ui.umd.cjs",
   "module": "dist/ui.js",

@@ -13,8 +13,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm run build
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn build
 
   publish-npm:
     needs: build
@@ -24,8 +25,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'yarn'
           registry-url: https://npm.pkg.github.com
-      - run: npm ci
-      - run: npm publish
+      - run: yarn
+      - run: yarn build
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

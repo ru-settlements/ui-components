@@ -1,5 +1,5 @@
 {
-  "name": "ui-components-settlements",
+  "name": "@ru-settlements/ui-components",
   "version": "0.1.2",
   "description": "Ui components for settlements",
   "main": "dist/ui.umd.cjs",
@@ -8,7 +8,10 @@
   "files": [
     "dist/*"
   ],
-  "repository": "git@github.com:ru-settlements/ui-components.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ru-settlements/ui-components.git"
+  },
   "author": "martiiian <jkramorevx@gmail.com>",
   "license": "MIT",
   "private": false,

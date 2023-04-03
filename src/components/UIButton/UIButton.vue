@@ -2,8 +2,8 @@
   <button
     type="button"
     :class="classes"
-    @click="onClick"
     :style="style"
+    @click="onClick"
   >
     {{ label }}
   </button>
@@ -23,10 +23,12 @@ const props = defineProps({
   },
   size: {
     type: String,
+    default: 'medium',
     validator: (value: string) => ['small', 'medium', 'large'].indexOf(value) !== -1
   },
   backgroundColor: {
-    type: String
+    type: String,
+    default: 'white'
   }
 })
 

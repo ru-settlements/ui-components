@@ -1,6 +1,9 @@
 <template>
   <h1>Here is component playground</h1>
-  <UIButton label="Button" background-color="red" />
+  <UIButton
+    label="Button"
+    background-color="red"
+  />
 </template>
 
 <script setup lang="ts">

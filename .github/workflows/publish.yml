@@ -18,6 +18,7 @@ jobs:
       - run: yarn lint
 
   publish:
+    needs: lint
     runs-on: ubuntu-latest
     permissions:
       contents: read

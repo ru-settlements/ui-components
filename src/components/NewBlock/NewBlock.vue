@@ -1,13 +1,18 @@
 <template>
   <div class="news">
     <div class="news__mobile-wrap">
-      <img src="src/assets/pics/babka-mobile.png" class="news__mobile-pic">
+      <img
+        src="src/assets/pics/babka-mobile.png"
+        class="news__mobile-pic"
+      >
       <div class="news__mobile-tag">
         <span class="news__mobile-tag-text">рыбалка</span>
       </div>
 
       <div class="news__mobile-news-info">
-        <h3 class="news__mobile-header">Бабка поймала большого сома</h3>
+        <h3 class="news__mobile-header">
+          Бабка поймала большого сома
+        </h3>
         <p class="news__mobile-paragraph">
           И нет сомнений, что ключевые особенности структуры
           проекта формируют глобальную экономическую сеть 
@@ -18,19 +23,24 @@
         <div class="news__mobile-data-likes">
           <span class="news__mobile-data">20.03.2023</span>
           <div class="news__mobile-likes-wrap">
-            <img src="src/assets/icons/heart.svg" class="news__mobile-like">
+            <img
+              src="src/assets/icons/heart.svg"
+              class="news__mobile-like"
+            >
             <span class="news__mobile-like-count">12</span>
           </div>
         </div>
       </div>
     </div>
 
-
     <div class="news__block-wrapper">
       <div>
-        <img src="src/assets/pics/babka.png" alt="babka" class="news__main-pic">
+        <img
+          src="src/assets/pics/babka.png"
+          alt="babka"
+          class="news__main-pic"
+        >
         <div class="news__img-elements">
-
           <div class="news__tag">
             <span class="news__tag-text">рыбалка</span>
           </div>
@@ -38,7 +48,11 @@
           <div class="news__post-info">
             <span class="news__post-date">20.03.2023</span>
             <div class="news__likes-wrap">
-              <img src="src/assets/icons/heart.svg" alt="like icon" class="news__like">
+              <img
+                src="src/assets/icons/heart.svg"
+                alt="like icon"
+                class="news__like"
+              >
               <span class="news__likes-quantity">12</span>
             </div>
           </div>
@@ -46,7 +60,9 @@
       </div>
 
       <div class="news__text-wrap">
-        <h3 class="news__header">Бабка поймала большого сома</h3>
+        <h3 class="news__header">
+          Бабка поймала большого сома
+        </h3>
         <p class="news__span">
           И нет сомнений, что ключевые особенности структуры проекта
           формируют глобальную экономическую сеть и при этом — 
@@ -149,7 +165,6 @@
       align-items: center;
       padding-right: 2%;
     }
-
 
     &__block-wrapper {
       width: 480px;

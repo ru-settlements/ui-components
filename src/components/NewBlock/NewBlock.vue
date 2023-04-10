@@ -2,37 +2,30 @@
   <div class="news-template">
     <div class="news-template__item">
       <div class="news-template__img-cover">
-        <figure class="news-template__img" />
+        <figure class="news-template__img">
+          <img
+            :src="img"
+            alt="babka"
+          >
+        </figure>
       </div>
 
       <div class="news-template__text">
         <div class="news-template__text-wrap">
           <h3 class="news-template__header">
-            Бабка поймала большого сома
+            {{ title }}
           </h3>
-          <p class="news-template__news-text">
-            И нет сомнений, что ключевые особенности
-            структуры проекта формируют глобальную 
-            экономическую сеть и при этом — рассмотрены
-              
-            исключительно в разрезе маркетинговых и 
-            финансовых предпосылок. 
-            <br>
-            <br>
-            И нет сомнений, что ключевые особенности
-            структуры проекта формируют глобальную 
-            экономическую сеть и при этом — рассмотрены
-            исключительно в разрезе маркетинговых и 
-            финансовых предпосылок. 
-          </p>
+          <p
+            class="news-template__news-text"
+            v-html="description"
+          />
         </div>
 
         <div class="news-template__date-tags news-template__center">
           <div class="news-template__center">
-            <span class="news-template__data">
-              20.03.2023
+            <span class="news-template__date">
+              {{ date }}
             </span>
-
 
             <div class="news-template__like-wrap news-template__center">
               <img
@@ -46,16 +39,12 @@
 
           <div>
             <a
+              v-for="tag of tags"
+              :key="tag.name"
               href="#"
-              class="news-template__tag news-template__color-blue"
+              :class="`news-template__tag news-template__tag_color_${tag.color}`"
             >
-              #медведица
-            </a>
-            <a
-              href="#"
-              class="news-template__tag news-template__color-green"
-            >
-              #рыбалка
+              #{{ tag.name }}
             </a>
           </div>
         </div>
@@ -64,16 +53,35 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  tags: {
+    type: Array,
+    default: () => []
+  },
+  imgLink: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: String,
+    required: true
+  }
+})
+
+const img = new URL(props.imgLink, import.meta.url);
+</script>
 
 
 <style lang="scss">
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-  }
-
   .news-template {
     &__item {
       @media screen and (max-width: 2000px) {
@@ -100,8 +108,23 @@
       }
     }
 
+    &__img {
+      margin-inline: 0;
+      margin-block: 0;
+
+      img {
+        width: 100%;
+        @media screen and (max-width: 401px) {
+          width: auto;
+          height: 100%;
+          object-position: center top;
+          object-fit: contain;
+        }
+      }
+
+    }
+
     &__img-cover {
-      background: url("src/assets/pics/babka.png") no-repeat center;
       @media screen and (max-width: 2000px) {
         width: 480px;
         height: 174px;
@@ -124,7 +147,7 @@
       }
     }
 
-    &__data {
+    &__date {
       @media screen and (max-width: 2000px) {
         text-decoration: underline;
       }
@@ -152,13 +175,21 @@
       }
     }
 
-    &__color-blue {
-      color: #5367cc;
+    &__tag {
       padding-right: 9px;
-    }
+      &:last-child {
+        padding-right: 0;
+      }
 
-    &__color-green {
-      color: #4dc352;
+      &_color {
+        &_blue {
+          color: #5367cc;
+        }
+
+        &_green {
+          color: #4dc352;
+        }
+      }
     }
 
     &__text {

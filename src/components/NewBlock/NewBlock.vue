@@ -1,28 +1,30 @@
 <template>
   <div class="news-template">
-
     <div class="news-template__item">
       <div class="news-template__img-cover">
-        <figure class="news-template__img" alt="сом и бабка" ></figure>
+        <figure class="news-template__img" />
       </div>
 
       <div class="news-template__text">
         <div class="news-template__text-wrap">
-          <h3 class="news-template__header">Бабка поймала большого сома</h3>
-            <p class="news-template__news-text">
-              И нет сомнений, что ключевые особенности
-              структуры проекта формируют глобальную 
-              экономическую сеть и при этом — рассмотрены
-              исключительно в разрезе маркетинговых и 
-              финансовых предпосылок. 
-              <br>
-              <br>
-              И нет сомнений, что ключевые особенности
-              структуры проекта формируют глобальную 
-              экономическую сеть и при этом — рассмотрены
-              исключительно в разрезе маркетинговых и 
-              финансовых предпосылок. 
-            </p>
+          <h3 class="news-template__header">
+            Бабка поймала большого сома
+          </h3>
+          <p class="news-template__news-text">
+            И нет сомнений, что ключевые особенности
+            структуры проекта формируют глобальную 
+            экономическую сеть и при этом — рассмотрены
+              
+            исключительно в разрезе маркетинговых и 
+            финансовых предпосылок. 
+            <br>
+            <br>
+            И нет сомнений, что ключевые особенности
+            структуры проекта формируют глобальную 
+            экономическую сеть и при этом — рассмотрены
+            исключительно в разрезе маркетинговых и 
+            финансовых предпосылок. 
+          </p>
         </div>
 
         <div class="news-template__date-tags news-template__center">
@@ -33,14 +35,28 @@
 
 
             <div class="news-template__like-wrap news-template__center">
-              <img class="news-template__like-icon" src="src/assets/icons/heart.svg" alt="like">
+              <img
+                class="news-template__like-icon"
+                src="src/assets/icons/heart.svg"
+                alt="like"
+              >
               <span>12</span>
             </div>
           </div>
 
           <div>
-            <a href="#" class="news-template__tag news-template__color-blue">#медведица</a>
-            <a href="#" class="news-template__tag news-template__color-green">#рыбалка</a>
+            <a
+              href="#"
+              class="news-template__tag news-template__color-blue"
+            >
+              #медведица
+            </a>
+            <a
+              href="#"
+              class="news-template__tag news-template__color-green"
+            >
+              #рыбалка
+            </a>
           </div>
         </div>
       </div>
@@ -62,7 +78,6 @@
     &__item {
       @media screen and (max-width: 2000px) {
         width: 482px;
-        padding-left: 20px;
       }
 
       @media screen and (max-width: 400px) {

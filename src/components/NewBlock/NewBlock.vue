@@ -30,7 +30,7 @@
             <div class="news-template__like-wrap news-template__center">
               <img
                 class="news-template__like-icon"
-                src="src/assets/icons/heart.svg"
+                src="./img/heart.svg"
                 alt="like"
               >
               <span>12</span>

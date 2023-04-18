@@ -11,12 +11,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/ui.es.js",
+      "import": "./dist/ui.js",
       "require": "./dist/ui.js"
     },
     "./dist/my-library-vue-ts.css": {
-      "import": "./dist/main.css",
-      "require": "./dist/main.css"
+      "import": "./dist/lib.css",
+      "require": "./dist/lib.css"
     }
   },
   "repository": {

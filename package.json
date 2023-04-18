@@ -22,7 +22,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "storybook": "storybook dev -p 6006",
     "storybook:publish": "chromatic --project-token=$(grep PROJECT_TOKEN .env.local | cut -d '=' -f2)",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build"
   },
   "dependencies": {
     "moment": "^2.29.4",

@@ -3,7 +3,7 @@
     <button class="filter__button">
       <img 
         class="filter__calendar" 
-        src="src/assets/icons/calendar.svg"
+        src="./img/calendar.svg"
         alt="calendar icon" 
       >
     </button>
@@ -11,21 +11,31 @@
     <button class="filter__button">
       <img 
         class="filter__bookmark" 
-        src="src/assets/icons/bookmark.svg"
+        src="./img/bookmark.svg"
         alt="bookmark icon" 
       >
     </button>
 
-    <span class="filter__sort">
-      Показаны новости: с 20.03.23 - 20.06.23
-    </span>
+    <div class="filter__date-filter-state">
+      Показаны новости: <span class="filter__date-filter-dates">с {{ dateFrom }} - {{ dateTo }}</span>
+    </div>
   </div>  
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps({
+  dateFrom: {
+    type: String,
+    required: true
+  },
+  dateTo: {
+    type: String,
+    required: true
+  }
+})
+</script>
 
 <style lang="scss">
-
   .filter {
     display: flex;
     align-items: center;
@@ -73,8 +83,7 @@
       }
     }
 
-    &__sort {
-      font-weight: 600;
+    &__date-filter-state {
       margin-left: 23px;
       @media only screen and (max-width: 600px) {
         display: none;
@@ -83,6 +92,10 @@
       @media only screen and (min-width: 1200px)  {
         font-size: 0.88rem;
       }
+    }
+
+    &__date-filter-dates {
+      font-weight: 600;
     }
   }
 </style>

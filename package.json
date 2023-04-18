@@ -6,9 +6,6 @@
   "module": "dist/ui.js",
   "type": "module",
   "types": "./dist/ui.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@ru-settlements"
-  },
   "files": [
     "dist/*"
   ],

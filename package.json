@@ -21,6 +21,7 @@
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "storybook": "start-storybook -p 6006",
+    "storybook:publish": "chromatic --project-token=$(grep PROJECT_TOKEN .env.local | cut -d '=' -f2)",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.3",
     "eslint": "^8.37.0",
     "eslint-plugin-vue": "^9.10.0",
     "sass": "^1.60.0",

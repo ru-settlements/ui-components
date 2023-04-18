@@ -2,14 +2,9 @@ module.exports = {
   root: true,
   parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: '@typescript-eslint/parser',
+    parser: '@typescript-eslint/parser'
   },
-  extends: [
-    // add more generic rulesets here, such as:
-    'eslint:recommended',
-    'plugin:vue/vue3-recommended',
-    '@vue/typescript/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', '@vue/typescript/recommended', 'plugin:storybook/recommended'],
   plugins: ['@typescript-eslint'],
   rules: {
     // override/add rules settings here, such as:
@@ -17,6 +12,6 @@ module.exports = {
     'vue/no-v-html': 'off'
   },
   env: {
-      'vue/setup-compiler-macros': true
+    'vue/setup-compiler-macros': true
   }
-}
+};

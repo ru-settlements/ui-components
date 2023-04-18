@@ -54,6 +54,8 @@
 </template>
 
 <script setup lang="ts">
+import { PropType } from "vue";
+
 const props = defineProps({
   title: {
     type: String,
@@ -64,7 +66,7 @@ const props = defineProps({
     required: true
   },
   tags: {
-    type: Array,
+    type: Array as PropType<{ color: string; name: string }[]>,
     default: () => []
   },
   imgLink: {
@@ -77,7 +79,7 @@ const props = defineProps({
   }
 })
 
-const img = new URL(props.imgLink, import.meta.url);
+const img = String(new URL(props.imgLink, import.meta.url));
 </script>
 
 

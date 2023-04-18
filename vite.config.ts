@@ -12,15 +12,20 @@ export default defineConfig({
     vue()
   ],
   build: {
+    cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'src/components/lib.ts'),
       name: 'ui',
       // the proper extensions will be added
       fileName: 'ui',
+      formats: ['es'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
+      input: {
+        main: resolve(__dirname, 'src/components/lib.ts')
+      },
       // into your library
       external: ['vue'],
       output: {
@@ -30,6 +35,11 @@ export default defineConfig({
           vue: 'Vue',
         },
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
     },
   },
 })

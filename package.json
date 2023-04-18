@@ -5,9 +5,20 @@
   "main": "dist/ui.umd.cjs",
   "module": "dist/ui.js",
   "type": "module",
+  "types": "./dist/ui.d.ts",
   "files": [
     "dist/*"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.js"
+    },
+    "./dist/my-library-vue-ts.css": {
+      "import": "./dist/main.css",
+      "require": "./dist/main.css"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:ru-settlements/ui-components.git"

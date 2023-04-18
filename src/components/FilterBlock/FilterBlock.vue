@@ -1,23 +1,23 @@
 <template>
-  <div class="filter">
-    <button class="filter__button">
+  <div class="filter-block">
+    <button class="filter-block__button">
       <img 
-        class="filter__calendar" 
+        class="filter-block__calendar"
         src="./img/calendar.svg"
         alt="calendar icon" 
       >
     </button>
 
-    <button class="filter__button">
+    <button class="filter-block__button">
       <img 
-        class="filter__bookmark" 
+        class="filter-block__bookmark"
         src="./img/bookmark.svg"
         alt="bookmark icon" 
       >
     </button>
 
-    <div class="filter__date-filter-state">
-      Показаны новости: <span class="filter__date-filter-dates">с {{ dateFrom }} - {{ dateTo }}</span>
+    <div class="filter-block__date-filter-state">
+      Показаны новости: <span class="filter-block__date-filter-dates">с {{ dateFrom }} - {{ dateTo }}</span>
     </div>
   </div>  
 </template>
@@ -36,7 +36,7 @@ defineProps({
 </script>
 
 <style lang="scss">
-  .filter {
+  .filter-block {
     display: flex;
     align-items: center;
     &__button {

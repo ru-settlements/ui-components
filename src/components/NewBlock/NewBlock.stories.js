@@ -1,4 +1,10 @@
 import NewBlock from './NewBlock.vue'
+
+export default {
+  title: 'News/NewBlock',
+  component: NewBlock,
+}
+
 const args = {
   title: 'Бабка поймала большого сома',
   description: `
@@ -16,7 +22,7 @@ const args = {
             исключительно в разрезе маркетинговых и 
             финансовых предпосылок.`,
   date: '20.03.2023',
-  imgLink: '/src/assets/pics/babka.png',
+  imgLink: './img/babka.png',
   tags: [{
     color: 'blue',
     name: 'медведица'
@@ -25,11 +31,6 @@ const args = {
       color: 'green',
       name: 'рыбалка'
     }]
-}
-
-export default {
-  title: 'News/NewBlock',
-  component: NewBlock,
 }
 
 const Template = (args) => ({

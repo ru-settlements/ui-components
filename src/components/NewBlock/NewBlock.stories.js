@@ -22,7 +22,7 @@ const args = {
             исключительно в разрезе маркетинговых и 
             финансовых предпосылок.`,
   date: '20.03.2023',
-  imgLink: './img/babka.png',
+  imgLink: '/src/assets/images/babka.png',
   tags: [{
     color: 'blue',
     name: 'медведица'

@@ -4,10 +4,11 @@
 name: Node.js Package
 
 on:
-  branches:
-    - main
-  tags:
-    - v*
+  push:
+    branches:
+      - main
+    tags:
+      - v*
 
 jobs:
   lint:

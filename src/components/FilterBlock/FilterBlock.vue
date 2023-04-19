@@ -71,7 +71,7 @@ defineProps({
     }
 
     &__bookmark {
-      color: #5367cc;
+      color: $indigo-400;
 
       @media only screen and (max-width: 600px) {
         width: 52%;

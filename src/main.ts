@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './assets/main-style.css'
+import './assets/styles/main-style.scss'
 
 import mdiVue from 'mdi-vue/v3'
 import * as icons from '@/plugins/mdi/mdi'

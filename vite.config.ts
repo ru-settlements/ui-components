@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
@@ -17,14 +16,13 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
     }),
-    cssInjectedByJsPlugin(),
     vue()
   ],
   build: {
     cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/components/lib.ts'),
+      entry: resolve(__dirname, 'src/lib.ts'),
       name: 'ui',
       // the proper extensions will be added
       fileName: 'ui',
@@ -33,7 +31,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       input: {
-        main: resolve(__dirname, 'src/components/lib.ts')
+        main: resolve(__dirname, 'src/lib.ts')
       },
       // into your library
       external: ['vue'],

@@ -1,0 +1,50 @@
+/**
+  usage examples
+
+  &__calendar {
+    width: 86%;
+
+    @include media('>min') {
+      width: 80%;
+    }
+
+    @include media('screen', '>md') {
+      background: red;
+    }
+  }
+ */
+
+$mediaXl: 1200px;
+$mediaLg: 992px;
+$mediaMd: 768px;
+$mediaMinWidth: 350px;
+
+@function translate-media-condition($c) {
+  $condMap: (
+      "screen": "only screen",
+      "print": "only print",
+      "retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+      ">xl": "(min-width: #{$mediaXl + 1})",
+      "<xl": "(max-width: #{$mediaXl})",
+      ">md": "(min-width: #{$mediaMd + 1})",
+      "<md": "(max-width: #{$mediaMd})",
+      ">min": "(min-width: #{$mediaMinWidth + 1})",
+      "<min": "(max-width: #{$mediaMinWidth})",
+      ">lg": "(min-width: #{$mediaLg + 1})",
+      "<lg": "(max-width: #{$mediaLg})",
+  );
+  @return map-get( $condMap, $c );
+}
+
+// The media mixin
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}

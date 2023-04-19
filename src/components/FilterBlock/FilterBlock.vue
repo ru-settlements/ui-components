@@ -64,11 +64,9 @@ defineProps({
     }
 
     &__calendar {
-      @media only screen and (max-width: 600px) {
-        width: 86%;
-      }
+      width: 86%;
 
-      @media only screen and (min-width: 1200px)  {
+      @include media('>min') {
         width: 80%;
       }
     }

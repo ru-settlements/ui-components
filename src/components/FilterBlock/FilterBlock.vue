@@ -9,11 +9,10 @@
     </button>
 
     <button class="filter-block__button">
-      <img 
+      <mdicon
+        name="bookmark-outline"
         class="filter-block__bookmark"
-        src="./img/bookmark.svg"
-        alt="bookmark icon" 
-      >
+      />
     </button>
 
     <div class="filter-block__date-filter-state">
@@ -72,6 +71,8 @@ defineProps({
     }
 
     &__bookmark {
+      color: #5367cc;
+
       @media only screen and (max-width: 600px) {
         width: 52%;
       }

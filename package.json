@@ -28,6 +28,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:fix": "yarn run lint --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:publish": "chromatic --project-token=$(grep PROJECT_TOKEN .env.local | cut -d '=' -f2)",
     "storybook:build": "storybook build"

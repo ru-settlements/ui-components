@@ -5,7 +5,7 @@
       date-to="23.04.24"
     />
 
-    <Slider label="Slider"/>
+    <Slider label="Slider" />
   </div>
 </template>
 

@@ -1,128 +1,147 @@
 <template>
-  <div class="carousel">
-    <div class="carousel-inner">
+  <div class="ui-slider">
+    <div class="ui-slider-inner">
       <input 
-        class="carousel-open" 
-        type="radio" id="carousel-1" 
-        name="carousel" 
+        id="ui-slider-1"
+        class="ui-slider-open"
+        type="radio" 
+        name="ui-slider"
         aria-hidden="true" 
         hidden=""
         checked="checked"
       >
 
-      <div class="carousel-item">
-        <div class="carousel-slide-content">
+      <div class="ui-slider-item">
+        <div class="ui-slider-slide-content">
           <span>Медведица затопила!</span>
-          <span class="carousel-slide-text">
+          <span class="ui-slider-slide-text">
             Проводятся спасательные мероприятия.
             Администрация выделила пострадавшим миску риса
           </span>
         </div>
 
-        <div class="carousel-tag">
-          <button class="carousel-btn-tag">
-            <a href="#" class="carousel-btn-link">происшествия</a>
+        <div class="ui-slider-tag">
+          <button class="ui-slider-btn-tag">
+            <a
+              href="#"
+              class="ui-slider-btn-link"
+            >происшествия</a>
           </button>
         </div>
         <img src="https://shorturl.at/xEM48">
       </div>
 
-      <input class="carousel-open" 
-        type="radio" id="carousel-2" 
-        name="carousel" 
+      <input
+        id="ui-slider-2"
+        class="ui-slider-open"
+        type="radio" 
+        name="ui-slider"
         aria-hidden="true" 
         hidden=""
       >
 
-      <div class="carousel-item">
-
-        <div class="carousel-slide-content">
+      <div class="ui-slider-item">
+        <div class="ui-slider-slide-content">
           <span>Placeholder Placeholder!</span>
-          <span class="carousel-slide-text">
+          <span class="ui-slider-slide-text">
             Город на юго-востоке европейской части России, 
             административный центр Саратовской области
           </span>
         </div>
 
-        <div class="carousel-tag">
-          <button class="carousel-btn-tag">
-            <a href="#" class="carousel-btn-link">путешествия</a>
+        <div class="ui-slider-tag">
+          <button class="ui-slider-btn-tag">
+            <a
+              href="#"
+              class="ui-slider-btn-link"
+            >путешествия</a>
           </button>
         </div>
 
         <img src="https://shorturl.at/axR03">
       </div>
 
-      <input class="carousel-open" 
-        type="radio" id="carousel-3" 
-        name="carousel" 
+      <input
+        id="ui-slider-3"
+        class="ui-slider-open"
+        type="radio" 
+        name="ui-slider"
         aria-hidden="true" 
         hidden=""
       >
 
-      <div class="carousel-item">
+      <div class="ui-slider-item">
         <img src="https://shorturl.at/choVX">
       </div>
 
       <label 
-        for="carousel-3" 
-        class="carousel-control 
-        prev control-1">
+        for="ui-slider-3"
+        class="ui-slider-control
+        prev control-1"
+      >
         ‹
       </label>
 
       <label 
-        for="carousel-2" 
-        class="carousel-control next control-1">
+        for="ui-slider-2"
+        class="ui-slider-control next control-1"
+      >
         ›
       </label>
 
       <label 
-        for="carousel-1" 
-        class="carousel-control prev control-2">
+        for="ui-slider-1"
+        class="ui-slider-control prev control-2"
+      >
         ‹
       </label>
 
       <label 
-        for="carousel-3" 
-        class="carousel-control next control-2">
+        for="ui-slider-3"
+        class="ui-slider-control next control-2"
+      >
         ›
       </label>
 
 
       <label 
-        for="carousel-2" 
-        class="carousel-control prev control-3">
+        for="ui-slider-2"
+        class="ui-slider-control prev control-3"
+      >
         ‹
       </label>
 
       <label 
-        for="carousel-1" 
-        class="carousel-control next control-3">
+        for="ui-slider-1"
+        class="ui-slider-control next control-3"
+      >
         ›
       </label>
 
-      <ol class="carousel-indicators">
+      <ol class="ui-slider-indicators">
         <li>
           <label 
-            for="carousel-1" 
-            class="carousel-bullet">
+            for="ui-slider-1"
+            class="ui-slider-bullet"
+          >
             •
           </label>
         </li>
 
         <li>
           <label 
-            for="carousel-2" 
-            class="carousel-bullet">
+            for="ui-slider-2"
+            class="ui-slider-bullet"
+          >
             •
           </label>
         </li>
 
         <li>
           <label 
-            for="carousel-3" 
-            class="carousel-bullet">
+            for="ui-slider-3"
+            class="ui-slider-bullet"
+          >
             •
           </label>
         </li>
@@ -135,26 +154,26 @@
 </script>
 
 <style lang="scss">
-  .carousel {
+  .ui-slider {
     position: relative;
     margin-top: 26px;
     width: 53.5%;
     height: 18%;
   }
 
-  .carousel-inner {
+  .ui-slider-inner {
     position: relative;
     overflow: hidden;
     width: 100%;
   }
-  .carousel-open {
-    &:checked+.carousel-item {
+  .ui-slider-open {
+    &:checked+.ui-slider-item {
       position: static;
       opacity: 100;
     }
   }
 
-  .carousel-item {
+  .ui-slider-item {
     height: 215px;
     position: absolute;
     opacity: 0;
@@ -169,7 +188,7 @@
     }
   }
 
-  .carousel-slide-content {
+  .ui-slider-slide-content {
     position: absolute;
     z-index: 9;
     font-size: 2.25rem;
@@ -185,12 +204,12 @@
     left: 1%;
   }
 
-  .carousel-slide-text {
+  .ui-slider-slide-text {
     font-size: 1.25rem;
     font-weight: 400;
   }
 
-  .carousel-control {
+  .ui-slider-control {
     background: $white;
     border-radius: 15%;
     color: $gray-400;
@@ -214,22 +233,22 @@
     }
   }
 
-  .carousel-control.prev {
+  .ui-slider-control.prev {
     right: 7.5%;
   }
 
-  .carousel-control.next {
+  .ui-slider-control.next {
     right: 2%;
   }
 
-  #carousel-1 {
+  #ui-slider-1 {
     &:checked~.control-1 {
       display: block;
     }
-    &:checked~.control-1~.carousel-indicators {
+    &:checked~.control-1~.ui-slider-indicators {
       li {
         &:nth-child(1) {
-          .carousel-bullet {
+          .ui-slider-bullet {
             color: $cyan-600;
           }
         }
@@ -237,14 +256,14 @@
     }
   }
 
-  #carousel-2 {
+  #ui-slider-2 {
     &:checked~.control-2 {
       display: block;
     }
-    &:checked~.control-2~.carousel-indicators {
+    &:checked~.control-2~.ui-slider-indicators {
       li {
         &:nth-child(2) {
-          .carousel-bullet {
+          .ui-slider-bullet {
             color: $cyan-600;
           }
         }
@@ -252,14 +271,14 @@
     }
   }
 
-  #carousel-3 {
+  #ui-slider-3 {
     &:checked~.control-3 {
       display: block;
     }
-    &:checked~.control-3~.carousel-indicators {
+    &:checked~.control-3~.ui-slider-indicators {
       li {
         &:nth-child(3) {
-          .carousel-bullet {
+          .ui-slider-bullet {
             color: $cyan-600;
           }
         }
@@ -267,7 +286,7 @@
     }
   }
 
-  .carousel-indicators {
+  .ui-slider-indicators {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -282,7 +301,7 @@
     }
   }
   
-  .carousel-bullet {
+  .ui-slider-bullet {
     color: $white;
     cursor: pointer;
     display: block;
@@ -292,19 +311,19 @@
     }
   }
 
-  .carousel-tag {
+  .ui-slider-tag {
     z-index: 21;
     position: absolute;
     bottom: 4%;
     left: 1%;
   }
 
-  .carousel-btn-tag {
+  .ui-slider-btn-tag {
     background: $gray-900;
     border-radius: 5px;
   }
 
-  .carousel-btn-link {
+  .ui-slider-btn-link {
     font-size: 0.75rem;
     color: $white;
     text-decoration: none;

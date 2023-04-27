@@ -40,15 +40,11 @@
     font-weight: 600;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
 
-    @media (min-width: 1200px) {
-      font-size: 2.28rem;
-    }
-
-    @media (min-width: 992px) and (max-width: 1199px) {
+    @include media('>xl') { 
       font-size: 2.25rem;
     }
 
-    @media (min-width: 768px) and (max-width: 991px) {
+    @include media('>lg') {
       font-size: 	1.87rem;
     }
   }
@@ -65,41 +61,30 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    font-size: 0.9rem;
+    margin-bottom: 71px;
+    max-height: 77%;
 
-    @media (max-width: 767px) {
-      margin-bottom: 82px;
-      -webkit-line-clamp: 2;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1rem;
-      margin-bottom: 71px;
-      max-height: 77%;
-    }
-
-    @media (max-width: 320px) {
-      font-size: 0.9rem;
-    }
-
-    @media (min-width: 1200px) {
+    @include media('>xl') {
       font-size: 1.4rem;
       max-width: 51%;
       -webkit-line-clamp: 2;
       margin-bottom: 68px;
     }
 
-    @media (min-width: 992px) and (max-width: 1199px) {
-      font-size: 1.3rem;
-      max-width: 51%;
-      -webkit-line-clamp: 2;
-      margin-bottom: 68px;
-    }
-
-    @media (min-width: 768px) and (max-width: 991px) {
+    @include media('>md') { 
       font-size: 1.1rem;
       -webkit-line-clamp: 2;
       max-width: 49%;
-      margin-bottom: 76px;
+      margin-bottom: 81px;
+    }
+
+    
+    @include media('>lg') {
+      font-size: 1.3rem;
+      max-width: 49%;
+      -webkit-line-clamp: 2;
+      margin-bottom: 75px;
     }
   }
 

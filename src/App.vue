@@ -1,7 +1,7 @@
 <template>
-
+    <SearchBar />
 </template>
 
 <script setup lang="ts">
-import { SearchBar } from "@/components";
+  import { SearchBar } from "@/components";
 </script>

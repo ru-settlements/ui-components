@@ -23,34 +23,42 @@
 <script lang="ts" setup></script>
 
 <style lang="scss">
+  ::-webkit-input-placeholder {
+    color: $gray-400;
+  }
   .search {
+    &__form {
+      position: relative;
+      width: 451px;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
     &__input {
       width: 100%;
       height: 50px;
-      padding-left: 21px;
+      padding-inline-start: 21px;
       border-radius: 11px;
       outline: none;
       border: none;
       border-bottom: 1px solid $gray-700;
       font-size: 15px;
+      padding-inline-end: 50px;
+    }
+
+    &__magnify path {
+      fill: $gray-800;
     }
 
     &__button {
       position: absolute; 
-      top: 4px;
-      right: -15px;
+      top: 9%;
+      right: -14%;
       width: 42px;
       height: 42px;
       border: none;
       cursor: pointer;
-    }
-
-    &__form {
-      position: relative;
-      width: 451px;
-      margin: 0 auto;
+      background: 0; 
     }
   }
-  .search {background: #A3D0C3;}
-  
 </style>

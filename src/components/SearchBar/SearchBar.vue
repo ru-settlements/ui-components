@@ -31,7 +31,6 @@
       position: relative;
       width: 451px;
       margin: 10px;
-      box-sizing: border-box;
     }
 
     &__input {
@@ -44,6 +43,7 @@
       border-bottom: 1px solid $gray-700;
       font-size: 15px;
       padding-inline-end: 50px;
+      box-sizing: border-box;
     }
 
     &__magnify path {
@@ -52,13 +52,14 @@
 
     &__button {
       position: absolute; 
-      top: 9%;
-      right: -14%;
+      top: 4px;
+      right: 1%;
       width: 42px;
       height: 42px;
       border: none;
       cursor: pointer;
-      background: 0; 
+      background: 0;
+      transform: scale(1.4);
     }
   }
 </style>

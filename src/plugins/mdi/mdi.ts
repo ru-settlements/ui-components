@@ -1,5 +1,6 @@
 export {
   mdiBookmarkOutline,
   mdiChevronRight,
-  mdiChevronLeft
+  mdiChevronLeft,
+  mdiMagnify
 } from '@mdi/js'

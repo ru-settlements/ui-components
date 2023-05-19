@@ -30,13 +30,14 @@
   .search {
     &__form {
       position: relative;
-      width: 451px;
-      margin: 10px;
+      inline-size: 451px;
+      margin-block-start: 10px;
+      margin-inline-start: 10px;
     }
 
     &__input {
-      width: 100%;
-      height: 50px;
+      inline-size: 100%;
+      block-size: 50px;
       padding-inline-start: 21px;
       border-radius: 11px;
       outline: none;
@@ -54,10 +55,10 @@
 
     &__button {
       position: absolute; 
-      top: 4px;
-      right: 0;
-      width: 42px;
-      height: 42px;
+      inset-block-start: 4px;
+      inset-inline-end: 15px;
+      inline-size: 42px;
+      block-size: 42px;
       border: none;
       cursor: pointer;
       background: none;

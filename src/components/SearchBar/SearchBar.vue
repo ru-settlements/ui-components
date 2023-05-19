@@ -14,6 +14,7 @@
         <mdicon
           name="magnify"
           class="search__magnify"
+          size="32"
         />
       </button>
     </form>
@@ -40,7 +41,7 @@
       border-radius: 11px;
       outline: none;
       border: none;
-      border-bottom: 1px solid $gray-700;
+      border-bottom: 1px solid $gray-1000;
       font-size: 15px;
       padding-inline-end: 50px;
       box-sizing: border-box;
@@ -50,16 +51,16 @@
       fill: $gray-800;
     }
 
+
     &__button {
       position: absolute; 
       top: 4px;
-      right: 1%;
+      right: 0;
       width: 42px;
       height: 42px;
       border: none;
       cursor: pointer;
-      background: 0;
-      transform: scale(1.4);
+      background: none;
     }
   }
 </style>

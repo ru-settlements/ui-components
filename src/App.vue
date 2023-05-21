@@ -1,7 +1,10 @@
 <template>
-  <SearchBar />
+  <div>
+    <UISlider label="Slider" />
+    <AppSocial />
+  </div>
 </template>
 
 <script setup lang="ts">
-  import { SearchBar } from "@/components";
+import { UISlider, AppSocial } from "@/components";
 </script>

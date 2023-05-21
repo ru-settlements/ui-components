@@ -1,4 +1,4 @@
-import {UIInput} from "@/components/index.js";
+import {UIInput} from "@/components";
 
 export default {
   title: 'BaseUI/UIInput',
@@ -32,7 +32,7 @@ Text.args = {
 }
 
 export const Password = Template.bind({})
-Text.args = {
+Password.args = {
   label: 'Пароль',
   type: 'text'
 }

@@ -25,14 +25,22 @@ const Template = (args) => ({
   template: '<UIInput v-bind="args" />'
 })
 
+const TemplatePassword = (args) => ({
+  components: { UIInput },
+  setup() {
+    return { args }
+  },
+  template: '<UIInput v-bind="args"><template #hint><a href="/">Забыли пароль?</a></template></UIInput>'
+})
+
 export const Text = Template.bind({})
 Text.args = {
   label: 'Текст',
   type: 'text'
 }
 
-export const Password = Template.bind({})
+export const Password = TemplatePassword.bind({})
 Password.args = {
   label: 'Пароль',
-  type: 'text'
+  type: 'password'
 }

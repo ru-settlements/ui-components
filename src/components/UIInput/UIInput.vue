@@ -1,53 +1,40 @@
 <template>
-  <input
-    id="email"
-    type="email"
-    class="form__control-input"
-    placeholder=" "
-    autocomplete="off"
-    autocapitalize="off"
-    autocorrect="off"
-    pattern=".{6,}"
-  >
+  <div class="ui-input">
+    <label class="ui-input__label">
+      {{ label }}
 
-  <label
-    for="email"
-    class="form__control-label"
-  >
-    Логин / Эл. почта
-  </label>
+      <input
+        :type="isPassword && passwordIsShowed ? 'text': type"
+        class="ui-input__input"
+        v-bind="additionalAttributes"
+        placeholder=" "
+      >
 
-  <label class="form__control-label form__control-eye">
-    <mdicon
-      name="eye"
-      class="form__eye"
-      size="27"
-    />
-  </label>
+      <mdicon
+        v-if="isPassword"
+        :name="passwordIsShowed ? 'eye-off': 'eye'"
+        class="ui-input__eye-btn"
+        size="27"
+        @click="togglePassword"
+      />
+    </label>
 
-  <input
-    id="password"
-    type="text"
-    class="form__control-input form__control-input-password"
-  >
-
-  <label
-    for="password"
-    class="form__control-label form__control-label-password"
-  >
-    Пароль
-  </label>
+    <p
+      v-if="$slots.hint"
+      class="ui-input__hint"
+    >
+      <slot name="hint" />
+    </p>
+  </div>
 </template>
 
 <script lang="ts" setup>
-defineProps({
+import {computed, ref} from "vue";
+
+const props = defineProps({
   label: {
     type: String,
     default: 'Email'
-  },
-  hint: {
-    type: String,
-    default: 'тут подсказка'
   },
   type: {
     type: String,
@@ -55,52 +42,69 @@ defineProps({
     validator: (value: string) => ['text', 'password'].includes(value)
   }
 })
+
+const passwordIsShowed = ref(false)
+
+const isPassword = computed(() => props.type === 'password')
+
+const additionalAttributes = {
+  autocomplete: isPassword.value ? "off" : null,
+  autocapitalize: isPassword.value ? "off" : null,
+  autocorrect: isPassword.value ? "off" : null
+}
+
+const togglePassword = () => {
+  passwordIsShowed.value = !passwordIsShowed.value
+}
 </script>
 
 <style lang="scss">
-.form {
-  &__input-password {
-    order: 0;
-    padding-inline-end: 50px;
-  }
-
-  &__control-eye {
-    inline-size: 32px;
+.ui-input {
+  &__label {
+    color: $gray-900;
+    font-size: 20px;
+    transition: color 300ms ease;
+    display: flex;
+    flex-direction: column;
     position: relative;
-    inset-block-start: 54px;
-    inset-inline-start: 100%;
+    font-weight: 300;
+  }
+
+  &__input {
+    color: $gray-600;
+    margin-inline: 0;
+    margin-block: 0.4rem 0.6rem;
+    border: 1px solid $blue-300;
+    padding-block: 1.2em;
+    padding-inline: 1.2em;
+    border-radius: 5px;
+    transition: box-shadow 300ms ease-out;
+    font-size: 1rem;
+
+    &:focus {
+      outline: #2bbee7 auto 3px;
+    }
+  }
+
+  &__eye-btn {
+    user-select: none;
+    display: inline-block;
+    inset-block-start: 45px;
+    inset-inline-end: 17px;
     text-align: right;
-    margin-inline-start: -44px;
+    position: absolute;
+
+    path {
+      fill: $gray-400;
+    }
   }
 
-  &__eye path {
-    fill: $gray-400;
-  }
-}
+  &__hint {
+    margin-block: 0;
 
-.form__control-label {
-  color: $gray-900;
-  font-size: 20px;
-  transition: color 300ms ease;
-}
-
-.form__control-input {
-  color: $gray-600;
-  margin-inline: 0;
-  margin-block: 0.8em;
-  border: 1px solid $blue-300;
-  padding-block: 1.2em;
-  padding-inline: 1.2em;
-  border-radius: 5px;
-  transition: box-shadow 300ms ease-out;
-  font-size: 16px;
-
-  &:hover {
-    box-shadow: 0 1px 3px rgba(#c5c1c0, 40%) inset;
-  }
-
-  &:focus {
-    outline: #2bbee7 auto 3px;
+    a {
+      color: $light-blue-800;
+    }
   }
 }
 </style>

@@ -1,70 +1,42 @@
 <template>
-  <form
-    action="#login"
-    class="form"
+  <input
+    id="email"
+    type="email"
+    class="form__control-input"
+    placeholder=" "
+    autocomplete="off"
+    autocapitalize="off"
+    autocorrect="off"
+    pattern=".{6,}"
   >
-    <div class="form__fields">
-      <input
-        id="email"
-        type="email"
-        class="form__control-input form__control-input-email"
-        placeholder=" "
-        required
-      >
 
-      <label
-        for="email"
-        class="form__control-label form__control-label-email"
-      >
-        Логин / Эл. почта
-      </label>
+  <label
+    for="email"
+    class="form__control-label"
+  >
+    Логин / Эл. почта
+  </label>
 
-      <div
-        class="form__control-requirements
-        form__control-requirements-email"
-      >
-        Адрес электронной почты должен быть действительным
-      </div>
+  <label class="form__control-label form__control-eye">
+    <mdicon
+      name="eye"
+      class="form__eye"
+      size="27"
+    />
+  </label>
 
+  <input
+    id="password"
+    type="text"
+    class="form__control-input form__control-input-password"
+  >
 
-      <label
-        class="form__control-label 
-        form__control-eye"
-      >
-
-        <mdicon
-          name="eye"
-          class="form__eye"
-          size="27"
-        />
-      </label>
-
-      <input
-        id="password"
-        type="text"
-        placeholder=" "
-        autocomplete="off"
-        autocapitalize="off"
-        autocorrect="off"
-        required
-        pattern=".{6,}"
-        class="form__control-input 
-        form__control-input-password"
-      >
-
-      <label
-        for="password"
-        class="form__control-label 
-        form__control-label-password"
-      >
-        Пароль
-      </label>
-
-      <div class="form__control-requirements">
-        Пароль должен состоять хотя бы из 6 символов
-      </div>
-    </div>
-  </form>
+  <label
+    for="password"
+    class="form__control-label form__control-label-password"
+  >
+    Пароль
+  </label>
 </template>
 
 <script lang="ts" setup>
@@ -86,71 +58,10 @@ defineProps({
 </script>
 
 <style lang="scss">
-html {
-  box-sizing: border-box;
-  block-size: 100%;
-}
-
-body {
-  background-color: #f1f2f1;
-  display: flex;
-  min-block-size: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 .form {
-  inline-size: 100%;
-  max-inline-size: 400px;
-  margin-block: auto;
-  margin-inline: auto;
-
-  &__fields {
-    display: flex;
-    flex-direction: column;
-    padding-block: 24px 15px;
-    padding-inline: 15px;
-  }
-
-  &__control-label {
-    color: $gray-900;
-    font-size: 20px;
-    transition: color 300ms ease;
-  }
-
-  &__control-requirements {
-    background: $pink-200;
-    border-top: none;
-    margin-block: -14px 15px;
-    margin-inline: 0;
-    max-block-size: 0;
-    padding-block: 0;
-    padding-inline: 9px;
-    overflow: hidden;
-    transition: all 200ms ease;
-  }
-
-  &__control-requirements-email,
-  &__control-input-email {
-    order: -1;
-  }
-
-  &__control-label-email {
-    order: -2;
-  }
-
   &__input-password {
     order: 0;
     padding-inline-end: 50px;
-  }
-
-  &__control-label-password {
-    order: -1;
-    margin-bottom: -32px;
   }
 
   &__control-eye {
@@ -159,20 +70,18 @@ body {
     inset-block-start: 54px;
     inset-inline-start: 100%;
     text-align: right;
-    margin-inline-start: -44px;  
+    margin-inline-start: -44px;
   }
 
   &__eye path {
     fill: $gray-400;
   }
+}
 
-  &__register {
-    text-align: center;
-  }
-
-  &__blue {
-    color: $light-blue-800;
-  }
+.form__control-label {
+  color: $gray-900;
+  font-size: 20px;
+  transition: color 300ms ease;
 }
 
 .form__control-input {
@@ -186,10 +95,6 @@ body {
   transition: box-shadow 300ms ease-out;
   font-size: 16px;
 
-  &:nth-child(even) {
-    margin-block-end: 7px;
-  }
-
   &:hover {
     box-shadow: 0 1px 3px rgba(#c5c1c0, 40%) inset;
   }
@@ -197,32 +102,5 @@ body {
   &:focus {
     outline: #2bbee7 auto 3px;
   }
-
-  &:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: red;
-    border-bottom: none;
-
-    &+.form__control-label {
-      color: red;
-
-      &+.form__control-requirements {
-        max-block-size: 100px;
-        padding-block-start: 9px;
-        padding-block-end: 9px;
-        padding-inline-start: 9px;
-        padding-inline-end: 9px;
-        border: 1px solid red;
-      }
-    }
-  }
-
-  &:valid:not(:focus):not(:placeholder-shown) {
-    border-color: #5fa550;
-
-    &+.form__control-label {
-      color: #5fa550;
-    }
-  }
 }
-
 </style>

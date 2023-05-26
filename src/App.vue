@@ -1,11 +1,7 @@
 <template>
-  <div>
-    <UISlider label="Slider" />
-    <AppSocial />
-    <UIInput />
-  </div>
+  <UIInput />
 </template>
 
 <script setup lang="ts">
-import { UISlider, AppSocial, UIInput } from "@/components";
+import { UIInput } from "@/components";
 </script>

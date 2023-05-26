@@ -20,16 +20,23 @@
       </label>
 
       <div
-        class="form__control-requirements
+        class="form__control-requirements 
         form__control-requirements-email"
       >
         Адрес электронной почты должен быть действительным
       </div>
 
 
+      <input
+        id="show-password"
+        type="checkbox"
+        class="form__show-password"
+      >
+
       <label
+        for="show-password"
         class="form__control-label 
-        form__control-eye"
+        form__control-show-password"
       >
 
         <mdicon
@@ -63,6 +70,31 @@
       <div class="form__control-requirements">
         Пароль должен состоять хотя бы из 6 символов
       </div>
+
+      <div class="form__forgot-password">
+        <a
+          class="form__forgot-link form__blue"
+          href="#"
+        >
+          Забыли пароль?
+        </a>
+      </div>
+
+      <button
+        type="submit"
+        class="form__button form__submit"
+      >
+        Войти
+      </button>
+
+      <div class="form__register ">
+        <a
+          class="form__link-register form__blue"
+          href="#"
+        >
+          Зарегистрироваться
+        </a>
+      </div>
     </div>
   </form>
 </template>
@@ -93,6 +125,7 @@ html {
 
 body {
   background-color: #f1f2f1;
+  background-image: linear-gradient(#e7e8e7, #f1f2f1);
   display: flex;
   min-block-size: 100%;
 }
@@ -110,10 +143,13 @@ body {
   margin-inline: auto;
 
   &__fields {
+    border-radius: 15px;
+    border: 1px solid #c5c1c0;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     padding-block: 24px 15px;
-    padding-inline: 15px;
+    padding-inline: 24px 15px;
   }
 
   &__control-label {
@@ -153,13 +189,24 @@ body {
     margin-bottom: -32px;
   }
 
-  &__control-eye {
+  &__control-show-password {
     inline-size: 32px;
     position: relative;
     inset-block-start: 54px;
     inset-inline-start: 100%;
     text-align: right;
-    margin-inline-start: -44px;  
+    margin-inline-start: -44px;
+  }
+
+  &__button {
+    padding-block-start: 14px;
+    padding-block-end: 14px;
+    padding-inline-start: 14px;
+    padding-inline-end: 14px;
+    user-select: none;
+    font-size: 20px;
+    margin-block-start: 36px;
+    box-shadow: 0px 3px 1px rgba(0, 105, 92, 0.28);
   }
 
   &__eye path {
@@ -225,4 +272,38 @@ body {
   }
 }
 
+.form__submit {
+  border: 1px solid $light-blue-600;
+  background-color: $light-blue-600;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 300ms ease-out, max-inline-size 150ms ease-out;
+  outline: none;
+  position: relative;
+  margin-block-start: 36px;
+  margin-block-end: 10px;
+
+
+  .form__control-input-email:valid~.form__control-input-password:valid~& {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.form__show-password {
+  display: none;
+
+  &:checked {
+    &~.form__control-input-password {
+      -webkit-text-security: disc;
+      -moz-text-security: disc;
+    }
+  }
+}
 </style>

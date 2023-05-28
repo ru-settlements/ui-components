@@ -61,11 +61,22 @@ export default {
 
 <style lang="scss">
   .social {
+    background: $white;
+    inline-size: 166px;
+    block-size: 50px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid $gray-1100;
+
     &__wrapper {
       padding-block-start: 13px;
     }
     &__link {
       padding-inline-start: 16px;
+      display: inline-block;
+      
+      &:first-child {
+        padding-inline-start: 10px;
+      }
     }
   }
 </style>

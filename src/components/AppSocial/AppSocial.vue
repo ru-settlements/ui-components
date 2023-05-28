@@ -5,7 +5,7 @@
         class="social__link"
         target="_blank"
         href="#"
-        >
+      >
         <img 
           class="social__icon"
           src="./img/whatsapp.svg"
@@ -17,7 +17,7 @@
         class="social__link"
         target="_blank"
         href="#"
-        >
+      >
         <img 
           class="social__icon"
           src="./img/vk.svg"
@@ -30,7 +30,7 @@
         class="social__link"
         target="_blank"
         href="#"
-        >
+      >
         <img 
           class="social__icon"
           src="./img/ok.svg"
@@ -42,7 +42,7 @@
         class="social__link"
         target="_blank"
         href="#"
-        >
+      >
         <img 
           class="social__icon"
           src="./img/tg.svg"

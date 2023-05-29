@@ -4,5 +4,7 @@ export {
   mdiChevronLeft,
   mdiMagnify,
   mdiEye,
-  mdiEyeOff
+  mdiEyeOff,
+  mdiAccountCircle,
+  mdiMenu
 } from '@mdi/js'

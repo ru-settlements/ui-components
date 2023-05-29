@@ -1,4 +1,4 @@
-import {UIInput} from "@/components";
+import { UIInput } from '@/components'
 
 export default {
   title: 'BaseUI/UIInput',

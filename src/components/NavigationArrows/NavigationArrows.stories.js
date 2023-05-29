@@ -1,4 +1,4 @@
-import NavigationArrows from "./NavigationArrows.vue";
+import NavigationArrows from './NavigationArrows.vue'
 
 export default {
   title: 'BaseUI/NavigationArrows',

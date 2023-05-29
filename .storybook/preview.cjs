@@ -1,3 +1,7 @@
+import { setup } from '@storybook/vue3'
+import mdiVue from 'mdi-vue/v3'
+import * as icons from '@/plugins/mdi/mdi'
+
 export const parameters = {
   viewport: {
     viewports: {
@@ -18,3 +22,7 @@ export const parameters = {
     },
   },
 }
+
+setup((app) => {
+  app.use(mdiVue, { icons })
+})

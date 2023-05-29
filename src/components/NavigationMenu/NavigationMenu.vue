@@ -2,66 +2,33 @@
   <nav class="menu">
     <div class="menu__wrapper">
       <div class="menu__mobile-wrapper">
-        <img src="./img/gora.png" alt="наша гора">
-        <span
-          class="menu__title"
-          >
-          Наша Гора
-        </span>
+        <img
+          src="./img/gora.png"
+          alt="наша гора"
+        >
+        <span class="menu__title">Наша Гора</span>
       </div>
-      
+
       <ul class="menu__list">
-        <li class="menu__item">
+        <li
+          v-for="item in props.items"
+          :key="item.name"
+          class="menu__item"
+        >
           <a
             class="menu__link"
-            href="#"
-            >
-            Новости
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a 
-            class="menu__link"
-            href="#"
-            >
-            Информация
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a
-            class="menu__link"
-            href="#"
-            >
-            Объявления
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a 
-            class="menu__link"
-            href="#"
-            >
-            История
-          </a>
-        </li>
-
-        <li class="menu__item">
-          <a
-            class="menu__link"
-            href="#"
-            >
-            Туристу
+            :href="item.link"
+          >
+            {{ item.name }}
           </a>
         </li>
       </ul>
 
       <div class="menu__icons">
         <a
-          class="menu__link-wrapper" 
+          class="menu__link-wrapper"
           href="#"
-          >
+        >
           <mdicon
             alt="search icon"
             name="Magnify"
@@ -70,10 +37,10 @@
           />
         </a>
 
-        <a 
+        <a
           href="#"
-          class="menu__link-wrapper" 
-          >
+          class="menu__link-wrapper"
+        >
           <mdicon
             alt="profile icon"
             name="AccountCircle"
@@ -82,10 +49,10 @@
           />
         </a>
 
-        <a 
+        <a
           href="#"
-          class="menu__link-wrapper" 
-          >
+          class="menu__link-wrapper"
+        >
           <mdicon
             alt="burger icon"
             name="Menu"
@@ -99,6 +66,14 @@
 </template>
 
 <script lang="ts" setup>
+interface MenuItem {
+  name: string
+  link: string
+}
+
+const props = defineProps<{
+  items: MenuItem[]
+}>()
 </script>
 
 
@@ -173,14 +148,12 @@
     &__profile-icon path,
     &__search-icon path,
     &__burger-icon  path {
-
       fill: $white;
       cursor: pointer;
     }
 
     &__search-icon,
     &__burger-icon {
-
       @include media('>md') {
         display: none;
         cursor: unset;

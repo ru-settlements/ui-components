@@ -1,7 +1,6 @@
 <template>
-  <NavigationArrows />
+  <div />
 </template>
 
 <script setup lang="ts">
-  import { NavigationArrows } from "@/components";
 </script>

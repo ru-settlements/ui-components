@@ -32,7 +32,7 @@
           <mdicon
             alt="search icon"
             name="Magnify"
-            class="menu__search-icon"
+            class="menu__search-icon menu__icon menu__icon-mobile "
             size="32"
           />
         </a>
@@ -44,7 +44,7 @@
           <mdicon
             alt="profile icon"
             name="AccountCircle"
-            class="menu__profile-icon"
+            class="menu__profile-icon menu__icon "
             size="32"
           />
         </a>
@@ -56,7 +56,7 @@
           <mdicon
             alt="burger icon"
             name="Menu"
-            class="menu__burger-icon"
+            class="menu__burger-icon menu__icon menu__icon-mobile "
             size="32"
           />
         </a>
@@ -145,15 +145,12 @@ const props = defineProps<{
       }
     }
 
-    &__profile-icon path,
-    &__search-icon path,
-    &__burger-icon  path {
+    &__icon path {
       fill: $white;
       cursor: pointer;
     }
 
-    &__search-icon,
-    &__burger-icon {
+    &__icon-mobile {
       @include media('>md') {
         display: none;
         cursor: unset;

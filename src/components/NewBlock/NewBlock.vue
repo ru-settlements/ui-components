@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "vue";
+import { PropType } from 'vue'
 
 const props = defineProps({
   title: {
@@ -79,7 +79,7 @@ const props = defineProps({
   }
 })
 
-const img = String(new URL(props.imgLink, import.meta.url));
+const img = String(new URL(props.imgLink, import.meta.url))
 </script>
 
 

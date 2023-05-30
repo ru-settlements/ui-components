@@ -52,9 +52,8 @@
   &__text {
     margin-top: 0;
     color: $white;
-    line-height: 24.2px;
+    line-height: 17px;
     max-width: 70%;
-    max-height: 29%;
     flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,8 +61,8 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     font-size: 0.9rem;
-    margin-bottom: 71px;
-    max-height: 77%;
+    margin-bottom: 84px;
+    max-height: 28%;
 
     @include media('>xl') {
       font-size: 1.4rem;
@@ -76,12 +75,14 @@
       font-size: 1.1rem;
       -webkit-line-clamp: 2;
       max-width: 49%;
-      margin-bottom: 81px;
+      margin-bottom: 82px;
+      line-height: 24px;
     }
 
     
     @include media('>lg') {
       font-size: 1.3rem;
+      line-height: 24px;
       max-width: 49%;
       -webkit-line-clamp: 2;
       margin-bottom: 75px;

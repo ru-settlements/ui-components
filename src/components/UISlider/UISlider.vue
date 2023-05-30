@@ -2,13 +2,25 @@
   <div class="ui-slider">
     <UISlide />
 
-    <div class="ui-slider__controls">
-      <button class="ui-slider__control">
-        <mdicon name="chevron-left" />
+    <div 
+      class="ui-slider__controls"
+      >
+      <button 
+        class="ui-slider__control"
+        >
+        <mdicon 
+          class="ui-slider__arrow-center-left"
+          name="chevron-left" 
+        />
       </button>
 
-      <button class="ui-slider__control">
-        <mdicon name="chevron-right" />
+      <button 
+        class="ui-slider__control"
+        >
+        <mdicon 
+          name="chevron-right" 
+          class="ui-slider__arrow-center"
+        />
       </button>
     </div>
   </div>
@@ -46,6 +58,14 @@ import UISlide from '@/components/UISlider/UISlide.vue'
     &:last-child {
       margin-right: 0;
     }
+  }
+
+  &__arrow-center svg {
+    transform: translate(1px, -3px);
+  }
+
+  &__arrow-center-left svg {
+    transform: translateY(-3px);
   }
 }
 </style>

@@ -4,6 +4,7 @@
       <div class="news-template__img-cover">
         <figure class="news-template__img">
           <img
+            class="news-template__img-item"
             :src="img"
             alt="babka"
           >
@@ -86,55 +87,54 @@ const img = String(new URL(props.imgLink, import.meta.url))
 <style lang="scss">
   .news-template {
     &__item {
-      @media screen and (max-width: 2000px) {
-        width: 482px;
-      }
+      inline-size: 482px;
 
-      @media screen and (max-width: 400px) {
-        width: 361px;
-        height: 102px;
-        padding: 5px;
+      @include media('>md') {
+        inline-size: 361px;
+        block-size: 102px;
+        padding-inline: 5px;
+        padding-block: 5px;
         display: -webkit-inline-box;
       }
     }
 
     &__header {
-      @media screen and (max-width: 2000px) {
+      @include media('<xl') {
         font-size: 1.25rem;
-        margin: 14px 0 10px 0;
+        margin-block: 14px 10px;
       }
 
-      @media screen and (max-width: 400px) {
+      @include media('>md') {
         font-size: 1rem;
-        margin: 0;
+        margin-block: 0;
+        margin-inline: 0;
       }
     }
 
     &__img {
       margin-inline: 0;
       margin-block: 0;
-
-      img {
-        width: 100%;
-        @media screen and (max-width: 401px) {
-          width: auto;
-          height: 100%;
-          object-position: center top;
-          object-fit: contain;
-        }
-      }
-
+      
     }
 
-    &__img-cover {
-      @media screen and (max-width: 2000px) {
-        width: 480px;
-        height: 174px;
-      }
+    &__img-item {
+      inline-size: 480px;
+      block-size: 174px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-      @media screen and (max-width: 400px) {
-        width: 100px;
-        height: 100px;
+      @include media('>md') {
+        inline-size: auto;
+        object-position: center top;
+        object-fit: contain;
+      }
+    }
+  
+    &__img-cover {
+      @include media('>md') {
+        inline-size: 100px;
+        block-size: 100px;
         overflow: hidden;
         border-radius: 10px;
         background-size: cover;
@@ -144,17 +144,17 @@ const img = String(new URL(props.imgLink, import.meta.url))
 
     &__date-tags {
       color: #6a6a6a;
-      @media screen and (max-width: 400px) {
+      @include media('>md') {
         font-size: 0.75rem;
       }
     }
 
     &__date {
-      @media screen and (max-width: 2000px) {
+      @include media('<md') {
         text-decoration: underline;
       }
 
-      @media screen and (max-width: 400px) {
+      @include media('>xl') {
         text-decoration: none;
       }
     }
@@ -162,25 +162,23 @@ const img = String(new URL(props.imgLink, import.meta.url))
     &__center {
       display: flex;
       align-items: center;
-
-      @media screen and (max-width: 2000px) {
-        justify-content: space-between;
-      }
+      justify-content: space-between;
     }
 
     &__like-wrap {
-      @media screen and (max-width: 2000px) {
-        padding-left: 12px ;
-      }
-      @media screen and (max-width: 400px) {
-        padding: 0 9px;
+      padding-inline-start: 12px;
+
+      @include media('>md') {
+        padding-inline: 9px;
+        padding-block: 0;
       }
     }
-
+    
     &__tag {
-      padding-right: 9px;
+      padding-inline-end: 9px;
+
       &:last-child {
-        padding-right: 0;
+        padding-inline-end: 0;
       }
 
       &_color {
@@ -195,24 +193,19 @@ const img = String(new URL(props.imgLink, import.meta.url))
     }
 
     &__text {
-      @media screen and (max-width: 400px) {
-        padding-left: 11px;
+      @include media('>md') {
+        padding-inline-start: 11px;
       }
     }
 
     &__news-text {
-      @media screen and (max-width: 2000px) {
-        font-size: 0.88rem;
-        margin: 0 0 11px 0;
-        width: 91%;
-      }
-
-      @media screen and (max-width: 400px) {
-        padding: 4px 0 2px;
-        max-width: 239px;
+      @include media('>md') {
+        padding-block: 4px 2px;
+        max-inline-size: 239px;
         font-size: 0.75rem;
         line-height: 0.93rem;
-        margin: 0;
+        margin-block: 0;
+        margin-inline: 0;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 4;
@@ -220,6 +213,12 @@ const img = String(new URL(props.imgLink, import.meta.url))
         white-space: normal;
         text-overflow: ellipsis;
         word-break: break-word;
+      }
+
+      @include media('<md') {
+        font-size: 0.88rem;
+        margin-block-end: 11px;
+        inline-size: 91%;
       }
     }
   }

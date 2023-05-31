@@ -5,5 +5,5 @@ export { default as NavigationMenu } from '@/components/NavigationMenu/Navigatio
 export { default as UISlider } from '@/components/UISlider/UISlider.vue'
 export { default as UIInput } from '@/components/UIInput/UIInput.vue'
 export { default as AppSocial } from '@/components/AppSocial/AppSocial.vue'
-export { default as SearchBar } from '@/components/SearchBar/SearchBar.vue'
+export { default as UISearchBar } from '@/components/UISearchBar/UISearchBar.vue'
 export { default as NavigationArrows } from '@/components/NavigationArrows/NavigationArrows.vue'

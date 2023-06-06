@@ -28,12 +28,11 @@
               {{ date }}
             </span>
 
-            <div class="news-template__like-wrap news-template__center">
-              <img
-                class="news-template__like-icon"
-                src="./img/heart.svg"
-                alt="like"
-              >
+            <div class="news-template__bookmark-wrap news-template__center">
+              <mdicon
+                class="news-template__bookmark-icon"
+                name="BookmarkOutline"
+              />
               <span>12</span>
             </div>
           </div>
@@ -88,43 +87,47 @@ const img = String(new URL(props.imgLink, import.meta.url))
   .news-template {
     &__item {
       inline-size: 482px;
+      display: -webkit-inline-box;
 
       @include media('>md') {
         inline-size: 361px;
         block-size: 102px;
         padding-inline: 5px;
         padding-block: 5px;
-        display: -webkit-inline-box;
+        display: flex;
+        flex-direction: column;
       }
     }
 
     &__header {
-      @include media('<xl') {
-        font-size: 1.25rem;
-        margin-block: 14px 10px;
-      }
-
-      @include media('>md') {
+      @include media('<md') {
         font-size: 1rem;
         margin-block: 0;
         margin-inline: 0;
+      }
+
+      @include media('>md') {
+        font-size: 1.25rem;
+        margin-block: 14px 10px;
       }
     }
 
     &__img {
       margin-inline: 0;
       margin-block: 0;
-      
     }
 
     &__img-item {
-      inline-size: 480px;
-      block-size: 174px;
-      object-fit: cover;
-      border-radius: 10px;
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      @include media('<md') {
+        inline-size: 480px;
+        block-size: 174px;
+        object-fit: cover;
+        border-radius: 10px;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        transform: translate(-38%);
+      }
 
-      @include media('>md') {
+      @include media('<md') {
         inline-size: auto;
         object-position: center top;
         object-fit: contain;
@@ -132,7 +135,7 @@ const img = String(new URL(props.imgLink, import.meta.url))
     }
   
     &__img-cover {
-      @include media('>md') {
+      @include media('<md') {
         inline-size: 100px;
         block-size: 100px;
         overflow: hidden;
@@ -144,7 +147,7 @@ const img = String(new URL(props.imgLink, import.meta.url))
 
     &__date-tags {
       color: #6a6a6a;
-      @include media('>md') {
+      @include media('<md') {
         font-size: 0.75rem;
       }
     }
@@ -165,7 +168,7 @@ const img = String(new URL(props.imgLink, import.meta.url))
       justify-content: space-between;
     }
 
-    &__like-wrap {
+    &__bookmark-wrap {
       padding-inline-start: 12px;
 
       @include media('>md') {
@@ -194,14 +197,18 @@ const img = String(new URL(props.imgLink, import.meta.url))
 
     &__text {
       @include media('>md') {
+        inline-size: 482px;
+      }
+
+      @include media('<md') {
         padding-inline-start: 11px;
       }
     }
 
     &__news-text {
-      @include media('>md') {
+      @include media('<md') {
         padding-block: 4px 2px;
-        max-inline-size: 239px;
+        max-inline-size: 262px;
         font-size: 0.75rem;
         line-height: 0.93rem;
         margin-block: 0;
@@ -213,12 +220,6 @@ const img = String(new URL(props.imgLink, import.meta.url))
         white-space: normal;
         text-overflow: ellipsis;
         word-break: break-word;
-      }
-
-      @include media('<md') {
-        font-size: 0.88rem;
-        margin-block-end: 11px;
-        inline-size: 91%;
       }
     }
   }

@@ -118,8 +118,8 @@ const img = String(new URL(props.imgLink, import.meta.url))
     }
 
     &__img-item {
+      max-inline-size: 480px;
       @include media('<md') {
-        inline-size: 480px;
         block-size: 174px;
         object-fit: cover;
         border-radius: 10px;

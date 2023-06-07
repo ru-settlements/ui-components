@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-import UISlide from '@/components/UISlider/UISlide.vue'
+import UISlide from './UISlide.vue'
 </script>
 
 <style lang="scss">

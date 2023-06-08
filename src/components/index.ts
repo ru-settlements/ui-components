@@ -1,5 +1,4 @@
 export { default as UIButton } from '@/components/UIButton/UIButton.vue'
-export { default as LoginButton } from '@components/LoginButton/LoginButton.vue'
 export { default as FilterBlock } from '@/components/FilterBlock/FilterBlock.vue'
 export { default as NewBlock } from '@/components/NewBlock/NewBlock.vue'
 export { default as NavigationMenu } from '@/components/NavigationMenu/NavigationMenu.vue'

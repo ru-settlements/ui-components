@@ -2,15 +2,15 @@
   <div class="ui-search-bar">
     <form class="ui-search-bar__form">
       <input 
-        class="ui-search-bar__input" 
+        class="ui-search-bar__input"
         type="text" 
         placeholder="Введите для поиска..."
         :value="modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
+        @input="updateQuery"
       >
 
       <button 
-        class="ui-search-bar__button" 
+        class="ui-search-bar__button"
         type="submit"
       >
         <mdicon
@@ -24,10 +24,14 @@
 </template>
 
 <script lang="ts" setup>
-defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue'])
 defineProps<{
   modelValue: string
 }>()
+
+const updateQuery = (e: Event) => {
+  emit('update:modelValue', (e.target as HTMLInputElement).value)
+}
 </script>
 
 <style lang="scss">

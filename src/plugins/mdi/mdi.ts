@@ -2,5 +2,9 @@ export {
   mdiBookmarkOutline,
   mdiChevronRight,
   mdiChevronLeft,
-  mdiMagnify
+  mdiMagnify,
+  mdiEye,
+  mdiEyeOff,
+  mdiAccountCircle,
+  mdiMenu
 } from '@mdi/js'

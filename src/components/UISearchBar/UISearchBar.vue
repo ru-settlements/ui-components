@@ -1,19 +1,21 @@
 <template>
-  <div class="search">
-    <form class="search__form">
+  <div class="ui-search-bar">
+    <form class="ui-search-bar__form">
       <input 
-        class="search__input" 
+        class="ui-search-bar__input" 
         type="text" 
         placeholder="Введите для поиска..."
+        :value="modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
       >
 
       <button 
-        class="search__button" 
+        class="ui-search-bar__button" 
         type="submit"
       >
         <mdicon
           name="magnify"
-          class="search__magnify"
+          class="ui-search-bar__magnify"
           size="32"
         />
       </button>
@@ -21,13 +23,18 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+defineEmits(['update:modelValue'])
+defineProps<{
+  modelValue: string
+}>()
+</script>
 
 <style lang="scss">
   ::-webkit-input-placeholder {
     color: $gray-400;
   }
-  .search {
+  .ui-search-bar {
     &__form {
       position: relative;
       inline-size: 451px;
@@ -51,7 +58,6 @@
     &__magnify path {
       fill: $gray-800;
     }
-
 
     &__button {
       position: absolute; 

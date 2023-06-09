@@ -27,10 +27,10 @@ const args = {
     color: 'blue',
     name: 'медведица'
   },
-    {
-      color: 'green',
-      name: 'рыбалка'
-    }]
+  {
+    color: 'green',
+    name: 'рыбалка'
+  }]
 }
 
 const Template = (args) => ({

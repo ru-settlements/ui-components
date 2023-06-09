@@ -1,83 +1,83 @@
 <template>
-  <button
-    type="button"
-    :class="classes"
-    :style="style"
-    @click="onClick"
-  >
-    {{ label }}
-  </button>
+  <div class="ui-button">
+    <button
+      class="ui-button__button"
+      v-bind="$attrs"
+    >
+      <div class="ui-button__icon">
+        <slot name="icon">
+          <img
+            v-if="icon"
+            :src="icon"
+          >
+        </slot>
+      </div>
+
+      <slot />
+    </button>
+
+    <a
+      v-if="subLink && subLinkLabel"
+      class="ui-button__sub-link"
+      :href="subLink"
+    >
+      {{ subLinkLabel }}
+    </a>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { computed } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue'
 
-const props = defineProps({
-  label: {
-    type: String,
-    required: true
-  },
-  primary: {
-    type: Boolean,
-    default: false
-  },
-  size: {
-    type: String,
-    default: 'medium',
-    validator: (value: string) => ['small', 'medium', 'large'].indexOf(value) !== -1
-  },
-  backgroundColor: {
-    type: String,
-    default: 'white'
-  }
-})
+const props = defineProps<{
+  subLink?: string
+  subLinkLabel?: string
+  iconPath: string
+}>()
 
-const emit = defineEmits(['click'])
-
-const classes = computed(() => ({
-  'ui-button': true,
-  'ui-button--primary': props.primary,
-  'ui-button--secondary': !props.primary,
-  [`ui-button--${props.size || 'medium'}`]: true,
-}))
-
-const style = computed(() => ({
-  backgroundColor: props.backgroundColor,
-}))
-
-const onClick = () => emit('click')
+const icon = computed(() => props.iconPath ? new URL(props.iconPath, import.meta.url).href : '')
 </script>
 
 <style lang="scss">
 .ui-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+  inline-size: 100%;
+  max-inline-size: 342px;
 
-  &--primary {
-    color: white;
-    background-color: #1ea7fd;
+  &__button {
+    background-color: $light-blue-600;
+    color: $white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 1px rgba(0, 105, 92, 0.28);
+    border: 1px solid $light-blue-600;
+    inline-size: 100%;
+    block-size: 51px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &:disabled {
+      background-color: $gray-400;
+      border: 1px solid $gray-400;
+      box-shadow: none;
+      cursor: unset;
+    }
   }
-  &--secondary {
-    color: #333;
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 0 0 1px inset;
+
+  &__icon {
+    position: absolute;
+    inset-inline-start: 13px;
+    display: flex;
   }
-  &--small {
-    font-size: 12px;
-    padding: 10px 16px;
-  }
-  &--medium {
-    font-size: 14px;
-    padding: 11px 20px;
-  }
-  &--large {
-    font-size: 16px;
-    padding: 12px 24px;
+
+  &__sub-link {
+    color: $light-blue-800;
+    display: flex;
+    justify-content: center;
+    padding-block-start: 10px;
   }
 }
 </style>

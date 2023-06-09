@@ -1,6 +1,6 @@
 {
   "name": "@ru-settlements/ui-components",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "description": "Ui components for settlements",
   "main": "dist/ui.umd.cjs",
   "module": "dist/ui.js",
@@ -31,7 +31,8 @@
     "lint:fix": "yarn run lint --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:publish": "chromatic --project-token=$(grep PROJECT_TOKEN .env.local | cut -d '=' -f2)",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@mdi/js": "^7.2.96",
@@ -55,7 +56,7 @@
     "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "babel-loader": "^8.3.0",
-    "chromatic": "^6.17.3",
+    "chromatic": "6.19.0-canary.3",
     "eslint": "^8.37.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-vue": "^9.10.0",

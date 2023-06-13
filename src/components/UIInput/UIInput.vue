@@ -26,10 +26,8 @@
       <slot name="hint" />
     </p>
 
-    <p 
-      class="ui-input__error"
-    >
-      Пароль должен содержать больше 6 символов
+    <p class="ui-input__error">
+      {{ error }}
     </p>
   </div>
 </template>

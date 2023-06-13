@@ -1,9 +1,7 @@
 <template>
-  <LoginButton icon-path="/src/components/LoginButton/img/telegram.svg">
-    Зарегистрироваться
-  </LoginButton>
+  <UIInput />
 </template>
 
 <script setup lang="ts">
-import LoginButton from '@/components/UIButton/UIButton.vue'
+import { UIInput } from './components'
 </script>

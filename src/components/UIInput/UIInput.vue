@@ -44,6 +44,7 @@ const props = defineProps({
   },
   error: {
     type: String,
+    default: 'text',
   },
   type: {
     type: String,

@@ -1,5 +1,5 @@
 <template>
-  <UIInput />
+ <UIInput />
 </template>
 
 <script setup lang="ts">

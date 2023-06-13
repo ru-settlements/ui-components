@@ -25,6 +25,12 @@
     >
       <slot name="hint" />
     </p>
+
+    <p 
+      class="ui-input__error"
+    >
+      Пароль должен содержать больше 6 символов
+    </p>
   </div>
 </template>
 
@@ -35,6 +41,9 @@ const props = defineProps({
   label: {
     type: String,
     default: 'Email'
+  },
+  error: {
+    type: String,
   },
   type: {
     type: String,
@@ -105,6 +114,12 @@ const togglePassword = () => {
     a {
       color: $light-blue-800;
     }
+  }
+
+  &__error {
+    color: $red-400;
+    font-weight: 300;
+    font-size: 0.75rem;
   }
 }
 </style>

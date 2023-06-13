@@ -1,7 +1,7 @@
 <template>
- <UIInput />
+  <UIInput />
 </template>
 
 <script setup lang="ts">
-import { UIInput } from './components';
+import { UIInput } from './components'
 </script>

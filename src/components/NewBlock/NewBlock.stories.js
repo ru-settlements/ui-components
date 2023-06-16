@@ -1,4 +1,5 @@
 import NewBlock from './NewBlock.vue'
+import Img from '@/assets/images/babka.png'
 
 export default {
   title: 'News/NewBlock',
@@ -22,7 +23,7 @@ const args = {
             исключительно в разрезе маркетинговых и 
             финансовых предпосылок.`,
   date: '20.03.2023',
-  imgLink: '/src/assets/images/babka.png',
+  img: Img,
   tags: [{
     color: 'blue',
     name: 'медведица'

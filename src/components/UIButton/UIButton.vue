@@ -32,10 +32,8 @@ import { computed } from 'vue'
 const props = defineProps<{
   subLink?: string
   subLinkLabel?: string
-  iconPath: string
+  icon: string
 }>()
-
-const icon = computed(() => props.iconPath ? new URL(props.iconPath, import.meta.url).href : '')
 </script>
 
 <style lang="scss">

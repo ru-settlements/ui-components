@@ -1,7 +1,7 @@
-import type { App } from 'vue';
-import * as components from "@/components";
-import mdiVue from 'mdi-vue/v3'
+import * as components from '@/components'
 import * as icons from '@/plugins/mdi/mdi'
+import mdiVue from 'mdi-vue/v3'
+import type { App } from 'vue'
 
 export default {
   install: (app: App) => {
@@ -13,6 +13,6 @@ export default {
 
     app.use(mdiVue, { icons })
   }
-};
+}
 
 export * from '@/components'

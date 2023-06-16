@@ -6,7 +6,7 @@
           <img
             class="news-template__img-item"
             :src="img"
-            alt="babka"
+            :alt="imgAlt"
           >
         </figure>
       </div>
@@ -69,17 +69,19 @@ const props = defineProps({
     type: Array as PropType<{ color: string; name: string }[]>,
     default: () => []
   },
-  imgLink: {
+  img: {
     type: String,
     required: true
+  },
+  imgAlt: {
+    type: String,
+    default: ''
   },
   date: {
     type: String,
     required: true
   }
 })
-
-const img = String(new URL(props.imgLink, import.meta.url))
 </script>
 
 

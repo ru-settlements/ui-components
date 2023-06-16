@@ -1,4 +1,5 @@
 import UIButton from './UIButton.vue'
+import Icon from './img/telegram.svg'
 
 export default {
   name: 'UI/UIButton',
@@ -21,7 +22,7 @@ Default.args = {
 export const WithIcon = Template.bind({})
 WithIcon.args = {
   defaultSlot: 'Зарегестрироваться',
-  'icon-path': './img/telegram.svg'
+  icon: Icon
 }
 
 export const Disabled = Template.bind({})
@@ -33,7 +34,7 @@ Disabled.args = {
 export const WithSubLink = Template.bind({})
 WithSubLink.args = {
   defaultSlot: 'Зарегестрироваться',
-  'icon-path': './img/telegram.svg',
+  icon: Icon,
   subLink: '#',
   subLinkLabel: 'войти'
 }

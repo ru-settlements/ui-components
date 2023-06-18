@@ -9,6 +9,7 @@
           <img
             v-if="icon"
             :src="icon"
+            alt=""
           >
         </slot>
       </div>
@@ -30,7 +31,7 @@
 defineProps<{
   subLink?: string
   subLinkLabel?: string
-  icon: string
+  icon?: string
 }>()
 </script>
 
@@ -43,7 +44,7 @@ defineProps<{
     background-color: $light-blue-600;
     color: $white;
     border-radius: 5px;
-    box-shadow: 0px 3px 1px rgba(0, 105, 92, 0.28);
+    box-shadow: 0 3px 1px rgba(0, 105, 92, 0.28);
     border: 1px solid $light-blue-600;
     inline-size: 100%;
     block-size: 51px;

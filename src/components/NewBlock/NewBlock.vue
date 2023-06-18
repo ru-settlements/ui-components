@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import { PropType } from 'vue'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     required: true
@@ -83,7 +83,6 @@ const props = defineProps({
   }
 })
 </script>
-
 
 <style lang="scss">
   .news-template {

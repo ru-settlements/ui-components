@@ -1,7 +1,7 @@
 import { UIInput } from '@/components'
 
 export default {
-  title: 'BaseUI/UIInput',
+  title: 'UI/UIInput',
   component: UIInput,
   argTypes: {
     label: {
@@ -43,4 +43,11 @@ export const Password = TemplatePassword.bind({})
 Password.args = {
   label: 'Пароль',
   type: 'password'
+}
+
+export const PasswordWithError = TemplatePassword.bind({})
+PasswordWithError.args = {
+  label: 'Пароль',
+  type: 'password',
+  error: 'Должен быть не менее 6 символов'
 }

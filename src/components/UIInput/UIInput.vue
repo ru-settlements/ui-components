@@ -26,7 +26,10 @@
       <slot name="hint" />
     </p>
 
-    <p class="ui-input__error">
+    <p
+      v-if="error"
+      class="ui-input__error"
+    >
       {{ error }}
     </p>
   </div>
@@ -42,7 +45,7 @@ const props = defineProps({
   },
   error: {
     type: String,
-    default: 'text',
+    default: '',
   },
   type: {
     type: String,
@@ -101,6 +104,7 @@ const togglePassword = () => {
     inset-inline-end: 17px;
     text-align: right;
     position: absolute;
+    cursor: pointer;
 
     path {
       fill: $gray-400;
@@ -119,6 +123,8 @@ const togglePassword = () => {
     color: $red-400;
     font-weight: 300;
     font-size: 0.75rem;
+    margin-block: 0;
+    margin-block-start: 6px;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 import NavigationArrows from './NavigationArrows.vue'
 
 export default {
-  title: 'BaseUI/NavigationArrows',
+  title: 'UI/NavigationArrows',
   component: NavigationArrows
 }
 

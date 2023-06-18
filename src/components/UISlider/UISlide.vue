@@ -1,24 +1,31 @@
 <template>
   <div
     class="ui-slide"
-    :style="{backgroundImage: `url('https://shorturl.at/xEM48'`}"
+    :style="{backgroundImage: `url('${slide.imgLink}'`}"
   >
     <p class="ui-slide__title">
-      Медведица затопила!
+      {{ slide.title }}
     </p>
 
     <p class="ui-slide__text">
-      Проводятся спасательные мероприятия.
-      Администрация выделила пострадавшим миску риса
+      {{ slide.text }}
     </p>
 
-    <a class="ui-slide__tag">
-      происшествия
+    <a
+      class="ui-slide__tag"
+      :class="`ui-slide__tag_style_${slide.tag.style}`"
+    >
+      {{ slide.tag.text }}
     </a>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { UISlide } from '@/components/UISlider/UISlide.types'
+
+defineProps<{ slide: UISlide }>()
+</script>
+
 <style lang="scss">
 .ui-slide {
   height: 215px;
@@ -90,12 +97,19 @@
   }
 
   &__tag {
-    background: $gray-900;
     padding: 2px 8px;
     border-radius: 5px;
     font-size: 0.75rem;
-    color: $white;
     text-decoration: none;
+    background: $gray-900;
+    color: $white;
+
+    &_style {
+      &_black {
+        background: $gray-900;
+        color: $white;
+      }
+    }
   }
 }
 </style>

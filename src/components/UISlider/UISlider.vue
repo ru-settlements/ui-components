@@ -1,6 +1,10 @@
 <template>
   <div class="ui-slider">
-    <UISlide />
+    <UISlide
+      v-for="slide in slides"
+      :key="slide.title"
+      :slide="slide"
+    />
 
     <div class="ui-slider__controls">
       <button class="ui-slider__control">
@@ -22,6 +26,10 @@
 
 <script lang="ts" setup>
 import UISlide from './UISlide.vue'
+import { UISlide as UISlideI } from '@/components/UISlider/UISlide.types'
+
+defineProps<{ slides: UISlideI[] }>()
+
 </script>
 
 <style lang="scss">

@@ -36,10 +36,16 @@ export default defineConfig({
       // into your library
       external: ['vue'],
       output: {
+        name: 'ui',
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           vue: 'Vue',
+        },
+        assetFileNames(chunkInfo) {
+          if (chunkInfo.name === 'main.css') return 'ui.css';
+
+          return chunkInfo.name;
         },
       },
     },

@@ -1,5 +1,5 @@
 <template>
-  <UIButton :icon="Logo">
+  <UIButton>
     something
   </UIButton>
 </template>

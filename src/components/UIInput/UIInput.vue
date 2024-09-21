@@ -59,9 +59,9 @@ const passwordIsShowed = ref(false)
 const isPassword = computed(() => props.type === 'password')
 
 const additionalAttributes = {
-  autocomplete: isPassword.value ? 'off' : null,
-  autocapitalize: isPassword.value ? 'off' : null,
-  autocorrect: isPassword.value ? 'off' : null
+  autocomplete: isPassword.value ? 'off' : 'on',
+  autocapitalize: isPassword.value ? 'off' : 'on',
+  autocorrect: isPassword.value ? 'off' : 'on'
 }
 
 const togglePassword = () => {

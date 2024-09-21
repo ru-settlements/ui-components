@@ -1,20 +1,24 @@
 {
   "name": "@ru-settlements/ui-components",
-  "version": "0.3.7",
+  "version": "1.0.0",
   "description": "Ui components for settlements",
   "main": "dist/ui.umd.cjs",
   "module": "dist/ui.js",
   "type": "module",
   "types": "./dist/ui.d.ts",
   "files": [
-    "dist/*"
+    "dist",
+    "package.json"
   ],
   "exports": {
     ".": {
       "import": "./dist/ui.js",
       "require": "./dist/ui.js"
     },
-    "./dist/lib.css": "./dist/lib.css"
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
+    }
   },
   "repository": {
     "type": "git",
@@ -31,7 +35,10 @@
     "storybook": "storybook dev -p 6006",
     "storybook:publish": "chromatic --project-token=$(grep PROJECT_TOKEN .env.local | cut -d '=' -f2)",
     "storybook:build": "storybook build",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "version:patch": "yarn version --patch",
+    "version:minor": "yarn version --minor",
+    "version:major": "yarn version --major"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
